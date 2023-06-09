@@ -1,3 +1,4 @@
+- Make sure to keep both files at same location else will create an error.
 - Validates the presence of a single command-line argument provided by the user.
 - Checks if Docker and Docker Compose are installed; if not, installs them.
 - Downloads the LEMP (Linux, Nginx, MySQL, PHP) and WordPress images from Docker Hub.
