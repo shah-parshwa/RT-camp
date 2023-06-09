@@ -52,15 +52,15 @@ while true; do
     case $choice in
         1)
             echo "Starting containers..."
-            sudo docker start $(sudo docker ps -a -q)
+            sudo docker start $(sudo docker ps -a -q) > /dev/null 2>&1
             ;;
         2)
             echo "Stopping containers..."
-            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker stop $(sudo docker ps -a -q) > /dev/null 2>&1
             ;;
         3)
             echo "Removing containers..."
-            sudo docker rm -f $(sudo docker ps -a -q)
+            	sudo docker rm -f $(sudo docker ps -a -q)
             break
            ;;
         4) 
