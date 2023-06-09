@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  nginx:
+    image: nginx:latest-alpine
+    ports:
+      - "8080:80"
+    depends_on:
+      - wordpress
+      - mysql
+    restart: always
+  mysql:
+    image: mysql:latest-alpine
+    restart: always
+    ports:
+      - 3306:3306 
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: rtcamp
+      MYSQL_PASSWORD: rtcamp
+  php:
+    image: php:7.4-fpm-alpine
+    depends_on:
+      - wordpress
+    restart: always
+  wordpress:
+    image: wordpress:latest-alpine
+    depends_on:
+      - mysql
+    ports:
+      - "80:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: rtcamp
+      WORDPRESS_DB_PASSWORD: rtcamp
+      WORDPRESS_DB_NAME: wordpress
