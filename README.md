@@ -35,5 +35,5 @@ Go to the project directory
 - Provides user options to manage the website:
   - Enable the website by turning on the container.
   - Disable the website by turning off the container.
-  - Delete all containers associated with the provided setup.
+  - Delete all containers associated with the provided setup. (These will delete all containers.)
   - Additional actions can be performed based on user preferences using a switch case.
